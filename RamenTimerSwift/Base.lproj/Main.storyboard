@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="RamenTimerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3p-FY-nPS">
+                                <rect key="frame" x="78" y="555.5" width="258" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="開始">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="countDown:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7er-3t-w81"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="00:00:000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbV-Vk-soc">
+                                <rect key="frame" x="44" y="463" width="326" height="68.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-gL-OQr">
+                                <rect key="frame" x="84" y="68" width="247" height="346"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z3p-FY-nPS" secondAttribute="trailing" constant="62" id="5el-8V-yuD"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Z3p-FY-nPS" secondAttribute="bottom" constant="138.5" id="Ard-gJ-crv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nmg-gL-OQr" secondAttribute="trailing" constant="67" id="FrO-UK-9Yl"/>
+                            <constraint firstItem="pbV-Vk-soc" firstAttribute="top" secondItem="nmg-gL-OQr" secondAttribute="bottom" constant="49" id="Ohh-rm-Xsa"/>
+                            <constraint firstItem="Z3p-FY-nPS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="62" id="T5H-tK-WdJ"/>
+                            <constraint firstItem="nmg-gL-OQr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="68" id="iGP-3Y-pKp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pbV-Vk-soc" secondAttribute="trailing" constant="28" id="rXV-R7-H6L"/>
+                            <constraint firstItem="Z3p-FY-nPS" firstAttribute="top" secondItem="pbV-Vk-soc" secondAttribute="bottom" constant="24" id="yas-E9-bKa"/>
+                            <constraint firstItem="pbV-Vk-soc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="28" id="ywD-QX-P58"/>
+                            <constraint firstItem="nmg-gL-OQr" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="48" id="z5P-Uf-kW0"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="lbTimer" destination="pbV-Vk-soc" id="Ljr-zy-BEz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image" width="306" height="360"/>
+    </resources>
+</document>
