@@ -25,18 +25,17 @@ class ViewController: UIViewController {
 
     @IBAction func countDown(sender: UIButton) {
         
-        self.lbTimer.text = "01:00:000"
-        
         // 背景色
         self.view.backgroundColor = UIColor.yellowColor()
         
         // タイマー生成、開始 １秒後の実行
-        var tmr = NSTimer.scheduledTimerWithTimeInterval(
-            0.001,                              // 時間間隔
+        var tmr: Void = NSTimer.scheduledTimerWithTimeInterval(
+            1.0,                              // 時間間隔
             target: self,                       // タイマーの実際の処理の場所
             selector: Selector("tickTimer:"),   // メソッド タイマーの実際の処理
             userInfo: nil,
             repeats: true)                      // 繰り返し
+            .fire()
     }
 
     // タイマー処理
@@ -46,23 +45,18 @@ class ViewController: UIViewController {
         
         // 時間書式の設定
         let df:NSDateFormatter = NSDateFormatter()
-        df.dateFormat = "mm:ss:SSS"
+        df.dateFormat = "mm:ss"
         
         // 基準日時の設定 ３分を日付型に変換
-        var dt:NSDate = df.dateFromString(self.lbTimer.text!)!
+        var dt:NSDate = df.dateFromString(lbTimer.text!)!
         
-         // 基準となる時間間隔0
-        //var dt2 = NSDate()
-        var dt2 = 60 * 3
-        //var dt2:NSDate = NSDate(timeIntervalSinceNow:noodleTime)
+        // カウントダウン
+        var dt02 = NSDate(timeInterval: -1.0, sinceDate: dt)
         
-//        NSDate *dt2 = [NSDate dateWithTimeInterval:-0.010// 基準となる時間間隔
-//            sinceDate:dt];
-        
-        self.lbTimer.text = df.stringFromDate(dt2)
+        self.lbTimer.text = df.stringFromDate(dt02)
 
         // 終了判定 3分が00:00になったら isEqualToString:文字の比較
-        if ([self.lbTimer.text == "00:00:000"] == true) {
+        if self.lbTimer.text == "00:00" {
             
             // バックアップ背景色の変更
             self.view.backgroundColor = UIColor.redColor()

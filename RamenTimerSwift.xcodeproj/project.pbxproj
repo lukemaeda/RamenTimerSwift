@@ -156,6 +156,7 @@
 		424674A41B4EA28D00AD4CA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "MAEDA HAJIME";
 				TargetAttributes = {
@@ -409,6 +410,7 @@
 				424674CD1B4EA28D00AD4CA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		424674CE1B4EA28D00AD4CA4 /* Build configuration list for PBXNativeTarget "RamenTimerSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +419,7 @@
 				424674D01B4EA28D00AD4CA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
